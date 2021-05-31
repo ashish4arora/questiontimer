@@ -17,6 +17,8 @@
 		if (0==t[2]) 
 		{
 			clearInterval(t[4]);
+			counter +=1;
+			document.getElementById('panel2').textContent = "Number of questions solved: " + counter;
 			document.getElementById('disp').style.color = "	#B22222";
 			t[3]+=t[1]-t[0];
 			var ttt = document.getElementById("lap");
@@ -33,8 +35,6 @@
 		else
 		{
 			t[4]=setInterval(disp, 43);
-			counter +=1;
-			document.getElementById('panel2').textContent = "Number of questions solved: " + counter;
 			document.getElementById('disp').style.color = "#00FF00";
 		}
 	}
