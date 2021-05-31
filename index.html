@@ -3,6 +3,7 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>Result</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <script type="text/javascript">
@@ -47,7 +48,7 @@
 	function disp() 
 	{
 		if (t[2]) t[1]=(new Date()).valueOf();
-		t[6].value=format(t[3]+t[1]-t[0]);
+		t[6].textContent=format(t[3]+t[1]-t[0]);
 	}
 
 	function format(ms) 
@@ -71,11 +72,12 @@ function stopwatch()
 </script>
 
 <body onload='stopwatch();' bgcolor="black">
-	<br><div align=center><input type='text' id='disp' maxlength=12 readonly><br><br>
+	<br><div align=center><span type='text' id='disp' maxlength=12 readonly></span><br><br>
 		<button type='button' onclick='ss()' id='butt' autofocus>Start/Stop</button>
 		<button type='button' onclick='r()' id='butt2'>Reset</button>
 	</div>
 	<br>
+
 	<p align="center" id = "panel">Time taken for the previous ques: 00:00:00</p><br>
 	<table align=center border=1>
 		<tr><th width=150>Q Number</th><th width=300>This question</th></tr>
@@ -89,9 +91,15 @@ function stopwatch()
 			color: white;
 		}
 
+		div{
+			width: 100%;
+		}
+
 		body{
+			width: 100%;
 			max-width: 100%;
 			overflow-x: hidden;
+			align-items: center;
 		}
 		#panel{
 			font-size: 1.5em;
@@ -99,18 +107,18 @@ function stopwatch()
 
 		#disp
 		{
-			background-color: black;font-size: 8em;font-weight: bold;color: #B22222;
-			font-family: "Courier New";padding: 0.15em;  height: auto; margin-left: 4.8em;
+			background-color: black;font-size: 4em;font-weight: bold;color: #B22222;
+			font-family: "Courier New";padding: 0.15em;  height: auto;  
 			border-right-width:0; border: none; 
 		}
 		#butt
 		{
-			font-size: 2em;width: 10em;font-family: "Courier New"; color: black; height: auto; border-radius: 10px;
+			font-size: 1.5em;width: 10em;font-family: "Courier New"; color: black; height: auto; border-radius: 10px; padding: 0.4em;
 		}
 		#butt2
 		{
-			font-size: 2em;
-			width: 10em;font-family: "Courier New"; color: black; height: auto; border-radius: 10px;
+			font-size: 1.5em;
+			width: 10em;font-family: "Courier New"; color: black; height: auto; border-radius: 10px; padding:  0.4em;
 		}
 		#lap
 		{
